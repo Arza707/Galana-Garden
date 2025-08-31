@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&family=Outfit:wght@100..900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&display=swap');
+    </style>
+    <link rel="icon" type="image/png" href="photo/icon.png">
+    <title>Galana Garden</title>
+</head>
+<style>
+    html {
+        scroll-behavior: smooth;
+        margin: 0; /* buang margin default */
+        padding: 0;
+    }
+
+    body{
+        margin: 0; /* buang margin default */
+        padding: 0;
+        background: url(photo/Background_image.svg);
+        background-color: #2e4d13;
+    }
+    h1{
+        font-family: "Outfit", sans-serif;
+        font-size: 130px;
+        color: white;
+    }
+    h2{
+        font-family: "Outfit", sans-serif;
+        font-size: 20px;
+        color: white;
+    }
+    p{
+        font-family: "Outfit", sans-serif;
+        color: #D2D5DA;
+        font-size: 16px;
+        font-weight: 400;
+    }
+    #lobby{
+        border: 0px solid black;
+        height: 800px;
+        width: 100%;
+        box-shadow: 0px 10px 10px black;
+        border-bottom-left-radius: 50% 100px;
+        border-bottom-right-radius: 50% 100px;
+        background-image: url(photo/backgroundPlant.svg);
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .menu{
+        border: 0px solid black;
+        width: 100%;
+        height: 100px;
+        display: flex;
+        justify-content: center;
+        background: rgba(255, 255, 255, 0.1); /* transparan */
+        backdrop-filter: blur(10px); /* inilah efek blur */
+        -webkit-backdrop-filter: blur(10px); /* untuk Safari */
+        border-bottom-left-radius: 50px;
+        border-bottom-right-radius: 50px;
+         box-shadow: 0px 10px 50px black;
+        position: fixed;
+        z-index: 2;
+    }
+    .logo, .information{
+        border: 0px solid black;
+        height: 100%;
+        width: 50%;
+        display: flex;
+        align-items: center;
+    }
+    .logo{
+         padding-left: 80px;
+        
+    }
+    .information{
+        gap: 10%;
+        justify-content: end;
+        padding-right: 80px;
+    }
+    .home{
+        border: 2px solid transparent;
+        border-radius: 20px;
+        height: 30px;
+        width: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+        transition: transform 0.2s ease;
+       
+        
+    }
+    .textMenu{
+        border: 2px solid transparent;
+        border-radius: 20px;
+        height: 30px;
+        width: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+        transition: transform 0.2s ease-in;
+    }
+    .text{
+        border: 0px solid black;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    .judul{
+        border: 0px solid black;
+        height: 500px;
+        width: 1000px;
+        text-align: center;
+        padding-top: 150px;
+    }
+    
+    #about{
+        border: 0px solid black;
+        height: fit-content;
+        display: grid;
+        justify-content: center;
+        padding-top: 100px;
+        padding-bottom: 150px;
+    }
+    .page{
+
+        border: 0px solid black;
+        display: flex;
+        justify-content: center;
+        height: 700px;
+        flex-wrap: wrap;
+    }
+    .layoutJudul{
+        border: 0px solid black;
+        width: 100%;
+        height: fit-content;
+        display: flex;
+        justify-content: center;
+        
+    }
+    .judul2{
+        border: 0px solid black;
+        width: 400px;
+        height: fit-content;
+        text-align: center;
+    }
+    .layoutBlog{
+        border: 0px solid black;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 50px;
+        padding-bottom: 140px;
+    }
+    .blog{
+        border: 0px solid black;
+        height: fit-content;
+        width: 260px;
+        padding: 20px;
+        background: #40302e;
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+        border-radius: 16px;
+        transition: transform 0.2s ease-in;
+        cursor: pointer;
+    }
+    .blog:active{
+        transform: scale(1.5);
+    }
+    .blog:hover{
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.8);
+
+       
+    }
+    .home:hover{
+        transform: scale(1.05);
+        background: linear-gradient(135deg,#ffffff, #ffffff, #485625, #ffffff, #ffffff);
+        background-size: 200% 200%;
+        animation: shine 1s linear forwards;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+    .home:hover, .textMenu:hover{
+        border-color: #e1e4a3;
+        transform: scale(1.05);
+        background: linear-gradient(135deg,#ffffff, #ffffff, #485625, #ffffff, #ffffff);
+        background-size: 200% 200%;
+        animation: shine 1s linear forwards;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+    
+
+@keyframes shine {
+  from { background-position: left top; }
+  to   { background-position: right bottom; }
+}
+    .emoji1{
+        background-color: #FCEED8; 
+        height: 50px; 
+        width: 50px; 
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .emoji2{
+        background-color: #DEE9FC; 
+        height: 50px; 
+        width: 50px; 
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .emoji3{
+        background-color: #FBE5E6; 
+        height: 50px; 
+        width: 50px; 
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #copyright{
+        border: 0px solid black;
+        height: 120px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: url(photo/Background_image.svg);
+        background-color: #40302e;
+        border-top-right-radius: 16px;
+        border-top-left-radius: 16px;
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+    }
+    .hamburger-menu {
+      position: relative;
+      padding: 15px;
+      display: none;
+    }
+
+    /* hidden checkbox */
+    #menu-toggle {
+      display: none;
+    }
+
+    /* tombol hamburger */
+    .menu-icon {
+      width: 35px;
+      height: 25px;
+      position: relative;
+      cursor: pointer;
+      display: inline-block;
+    }
+
+    /* garis strip */
+    .menu-icon span {
+      position: absolute;
+      height: 4px;
+      width: 100%;
+      background: white;
+      border-radius: 4px;
+      left: 0;
+      transition: 0.3s;
+    }
+
+    .menu-icon span:nth-child(1) {
+      top: 0;
+    }
+    .menu-icon span:nth-child(2) {
+      top: 10px;
+    }
+    .menu-icon span:nth-child(3) {
+      top: 20px;
+    }
+
+    /* animasi jadi X */
+    #menu-toggle:checked + .menu-icon span:nth-child(1) {
+      transform: rotate(45deg);
+      top: 10px;
+    }
+    #menu-toggle:checked + .menu-icon span:nth-child(2) {
+      opacity: 0;
+    }
+    #menu-toggle:checked + .menu-icon span:nth-child(3) {
+      transform: rotate(-45deg);
+      top: 10px;
+    }
+
+    /* dropdown */
+    .menu-content {
+      display: none;
+      position: absolute;
+      top: 55px;
+      left: 5px;
+      min-width: 150px;
+      background: #627525;
+      border-radius: 8px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+      overflow: hidden;
+    }
+
+    .menu-content a {
+      display: block;
+      padding: 12px 16px;
+      color: white;
+      text-decoration: none;
+    }
+
+    .menu-content a:hover {
+      background: rgba(255,255,255,0.1);
+    }
+
+    /* saat aktif, tampilkan menu */
+    #menu-toggle:checked ~ .menu-content {
+      display: block;
+      animation: slideDown 0.3s ease;
+    }
+    .textSubJudul{
+        margin-top: -100px;
+        font-size: 40px;
+        font-weight: 200;
+    }
+    .textJudul2{
+        font-size: 40px;
+    }
+
+    @keyframes slideDown {
+      from {opacity: 0; transform: translateY(-10px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+
+    @media (max-width: 768px){
+        
+        .hamburger-menu{
+           display: block;
+        }
+        .home, .textMenu{
+            display: none;
+        }
+        .textJudul{
+            font-size: 40px;
+            margin-top: 150px;
+        }
+        .textSubJudul{
+            font-size: 10px;
+            margin-top: -20px;
+        }
+        #lobby{
+            height: fit-content;
+        }
+        .textJudul2{
+            font-size: 30px;
+        }
+        .blog:active{
+            transform: scale(1.1);
+        }
+        .judul2{
+            width: 300px;
+        }
+        
+        
+    }
+</style>
+<body>
+    <div id="lobby">
+        <div class="menu">
+            <div class="logo">
+                <a href="#lobby" style="text-decoration: none;"><img src="photo/icon.png" style="width:60px; border: 0px solid black;">
+                <div style="width: 100px;border: 0px solid black;padding-left: 10px;"><h2 style="font-weight: 400;">GALANA GARDEN</h2></a></div>
+            </div>
+            <div class="information">
+                <a href="#lobby" class="home">
+                    <h2><b>HOME</b></h2>
+                </a>
+                <a href="#about" class="textMenu">
+                    <h2 style="font-weight: 300;">ABOUT</h2>
+                </a>
+                <a href="#copyright" class="textMenu">
+                    <h2 style="font-weight: 300;">CREDIT</h2>
+                </a>
+                <div class="hamburger-menu">
+                    <input type="checkbox" id="menu-toggle">
+                    <label for="menu-toggle" class="menu-icon">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </label>
+                
+                    <div class="menu-content">
+                        <a href="#lobby"><h2>HOME</h2></a>
+                        <a href="#about"><h2>ABOUT</h2></a>
+                        <a href="#copyright"><h2>CREDIT</h2></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="text">
+            <div class="judul">
+                <h1 class="textJudul">GARDENING</h1>
+                <h2 class="textSubJudul"><i>Growing Life, One Plant at a Time</i></h2>
+            </div>
+            <div class="link">
+
+            </div>
+        </div>
+    </div>
+
+    <div id="about">
+        <div class="page">
+            <div class="layoutBlog">
+                <div class="layoutJudul">
+                    <div class="judul2">
+                        <h1 class="textJudul2">Quality feedbacks for <br>your SaaS products</h1>
+                        <p style="color: #9DA3AE;">The blocks & components you need</p>
+                    </div>
+                </div>
+                <div class="blog">
+                    <div class="emoji1">
+                        <h2>✋</h2>
+                    </div>
+                    <h2>Collect Feedback at Multiple Touchpoints</h2>
+                    <p>Provide a comprehensive understanding of the customer experience.</p>
+                    <img src="photo/photo_1.png" style="border-radius: 16px; width: auto; height: auto;" alt="photo2">
+                </div>
+                <div class="blog">
+                    <div class="emoji2">
+                        <h2>🥅</h2>
+                    </div>
+                    <h2>Collect Feedback at Multiple Touchpoints</h2>
+                    <p>Provide a comprehensive understanding of the customer experience.</p>
+                    <img src="photo/photo_2.png" style="border-radius: 16px; width: auto; height: auto;" alt="photo1">
+                </div>
+                <div class="blog">
+                    <div class="emoji3">
+                        <h2>💬</h2>
+                    </div>
+                    <h2>Collect Feedback at Multiple Touchpoints</h2>
+                    <p>Provide a comprehensive understanding of the customer experience.</p>
+                    <img src="photo/photo_3.png" style="border-radius: 16px; width: auto; height: auto;" alt="photo3">
+                </div>
+            </div>
+            <div id="copyright">
+                <h1 style="font-size: 20px;">© Build by Arza Maulana Zafar</h1>
+            </div>
+        </div>
+    </div>
+
+    
+</body>
+</html>
